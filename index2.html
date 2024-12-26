@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+           
+            background-image:url(IMG/37799e28a92884f914fc6d7a6b5fe741.jpg);
+            background-repeat: no-repeat;
+            background-size: 1100px;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+        }
+        .number {
+            font-size: 48px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <a class="TEXT" href="index2.html">Счетчик купленных билетов</a>
+    <div class="number" id="number">0</div>
+
+    <script>
+        // Получаем текущее значение счётчика из Local Storage
+        let count = localStorage.getItem('number') ? parseInt(localStorage.getItem('number')) : 0;
+
+        // Функция для обновления счётчика
+        function updatenumber() {
+            count++;
+            localStorage.setItem('number', count); // Сохраняем новое значение в Local Storage
+            document.getElementById('number').innerText = count; // Обновляем отображение
+        }
+
+        // Запускаем обновление счётчика каждую секунду
+        setInterval(updatenumber, 1);
+
+        // Отображаем начальное значение счётчика
+        document.getElementById('number').innerText = count;
+    </script>
+  <div class="nazad1223"></div>
+</body> 
+</html>
